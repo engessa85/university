@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>الرئيسيه</title>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <div class="register-div">
+                <button class="register-button" id="register-button">انشاء حساب</button>
+                <div class="modal-register" id="modal-register">
+                    <div class="modal-button"><a href="{% url 'register-page-student' %}">طالب</a></div>
+                    <hr> <!-- Horizontal line -->
+                    <div class="modal-button"><a href="{% url 'register-page-university' %}">جامعه</a></div>
+                </div>
+            </div>
+            
+            <div class="login-div">
+                <button class="login-button" id="login-button">تسجيل الدخول</button>
+                <div class="modal-login" id="modal-login">
+                    <div class="modal-button"><a href="#">طالب</a></div>
+                    <hr> <!-- Horizontal line -->
+                    <div class="modal-button"><a href="">جامعه</a></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div><input class="search" type="text" placeholder="البحث"></div>
+        <ul>
+            <li><a href="#">الجامعات المتاحه</a></li>
+            <li><a href="#">احصائيات</a></li>
+            <li><a href="#">دورات و ورش العمل</a></li>
+            <li><a href="#">الجدول الزمني</a></li>
+        </ul>        
+    </header>
+    <section class="main-section">
+        <div class="right">
+            <img class="right-image" src="{% static 'images/logo.png' %}" alt="" >
+        </div>
+        <div class="left">
+            <h1>مرحبا بك</h1>
+            <h1>في المنصه المشتركه للجامعات و الطلاب</h1>
+        </div>
+    </section>
+    <script src="{% static 'javascript/main.js' %}"></script>
+</body>
+</html>

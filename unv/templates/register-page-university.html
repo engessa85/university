@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register-univ.css' %}">
+    <title>تسجيل الجامعه</title>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
+        </div>
+        <ul>
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
+            <li><a href="#">الجامعات المتاحه</a></li>
+            <li><a href="#">الجدول الزمني</a></li>
+            <li><a href="#">احصائيات</a></li>
+        </ul>        
+    </header>
+    <section class="main-section">
+        <div class="right">
+            <img class="right-image" src="{% static 'images/logo.png' %}" alt="" >
+        </div>
+        <div class="left">
+            <div class="left-form">
+                <h1>تسجيل الجامعه</h1>
+                <form method="post" action=".">
+                    <select name="uni-name" required>
+                        <option value="" disabled selected> الجامعة</option>
+                        <option value="uni1">جامعة أم القرى</option>
+                        <option value="uni2">الجامعة الإسلامية</option>
+                        <option value="uni3">جامعة الإمام محمد بن سعود الإسلامية</option>
+                        <option value="uni4">جامعة الملك سعود</option>
+                        <option value="uni5">جامعة الملك عبدالعزيز</option>
+                        <option value="uni6">جامعة الملك فهد للبترول والمعادن</option>
+                        <option value="uni7">جامعة الملك فيصل</option>
+                        <option value="uni8">جامعة الملك خالد</option>
+                        <option value="uni9">جامعة القصيم</option>
+                        <option value="uni10">جامعة طيبة</option>
+                        <option value="uni11">جامعة الطائف</option>
+                        <option value="uni12">جامعة حائل</option>
+                        <option value="uni13">جامعة جازان</option>
+                        <option value="uni14">جامعة الجوف</option>
+                        <option value="uni15">جامعة الباحة</option>
+                        <option value="uni16">جامعة تبوك</option>
+                        <option value="uni17">جامعة نجران</option>
+                        <option value="uni18">جامعة الحدود الشمالية</option>
+                        <option value="uni19">جامعة الأميرة نورة بنت عبدالرحمن</option>
+                        <option value="uni20">
+                            جامعة الملك سعود بن عبدالعزيز للعلوم الصحية
+                        </option>
+                        <option value="uni21">جامعة الإمام عبدالرحمن بن فيصل</option>
+                        <option value="uni22">جامعة الأمير سطام بن عبدالعزيز</option>
+                        <option value="uni23">جامعة شقراء</option>
+                        <option value="uni24">جامعة المجمعة</option>
+                        <option value="uni25">الجامعة السعودية الإلكترونية</option>
+                        <option value="uni26">جامعة جدة</option>
+                        <option value="uni27">جامعة بيشة</option>
+                        <option value="uni28">جامعة الملك عبدالله للعلوم والتقنية</option>
+                        <option value="uni29">جامعة حفر الباطن</option>
+                    </select>
+                    <input type="text" id="civilid" name="civilid" placeholder="رقم الهويه" required>
+                    <input type="email" id="email" name="email" placeholder="الايميل" required>
+                    <input type="password" id="password" name="password" placeholder="كلمه السر" required>
+                    <button type="submit">دخول</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

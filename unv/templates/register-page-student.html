@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/registere.css' %}">
+    <title>تسجيل الطالب</title>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
+        </div>
+        <ul>
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
+            <li><a href="#">الجامعات المتاحه</a></li>
+            <li><a href="#">الجدول الزمني</a></li>
+            <li><a href="#">احصائيات</a></li>
+        </ul>        
+    </header>
+    <section class="main-section">
+        <div class="right">
+            <img class="right-image" src="{% static 'images/logo.png' %}" alt="" >
+        </div>
+        <div class="left">
+            <div class="left-form">
+                <h1>تسجيل الطالب</h1>
+                <form method="post" action=".">
+                    <input type="text" id="username" name="username" placeholder="اسم المستخدم" required>
+                    <input type="text" id="civilid" name="civilid" placeholder="رقم الهويه" required>
+                    <input type="email" id="email" name="email" placeholder="الايميل" required>
+                    <input type="password" id="password" name="password" placeholder="كلمه السر" required>
+                    <button type="submit">دخول</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
