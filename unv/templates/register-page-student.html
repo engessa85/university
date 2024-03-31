@@ -23,11 +23,21 @@
     <section class="main-section">
         <div class="right">
             <img class="right-image" src="{% static 'images/logo.png' %}" alt="" >
+            <div class="message-container">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
         </div>
         <div class="left">
             <div class="left-form">
                 <h1>تسجيل الطالب</h1>
                 <form method="post" action=".">
+                    {% csrf_token %}
                     <input type="text" id="username" name="username" placeholder="اسم المستخدم" required>
                     <input type="text" id="civilid" name="civilid" placeholder="رقم الهويه" required>
                     <input type="email" id="email" name="email" placeholder="الايميل" required>

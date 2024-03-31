@@ -23,9 +23,14 @@
             <div class="login-div">
                 <button class="login-button" id="login-button">تسجيل الدخول</button>
                 <div class="modal-login" id="modal-login">
-                    <div class="modal-button"><a href="#">طالب</a></div>
+
+                    <div id = "student--login" class="modal-button"><button>طالب</button></div>
+                    
+
                     <hr> <!-- Horizontal line -->
-                    <div class="modal-button"><a href="">جامعه</a></div>
+
+                    <div id="univ--login" class="modal-button"><button>جامعه</button></div>
+
                 </div>
             </div>
         </div>
@@ -46,6 +51,19 @@
         <div class="left">
             <h1>مرحبا بك</h1>
             <h1>في المنصه المشتركه للجامعات و الطلاب</h1>
+        </div>
+    </section>
+    <section>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>تسجيل الدخول</p>
+              <form action="." method="post">
+                <input type="text" id="username" name="username" placeholder="اسم المستخدم / الهويه" required>
+                <input type="password" id="password" name="password" placeholder="كلمه السر" required>
+                <button type="submit">دخول</button>
+              </form>
+            </div>
         </div>
     </section>
     <script src="{% static 'javascript/main.js' %}"></script>

@@ -124,5 +124,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']  # Path to your project-level static di
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'base.UserAccount'
+
 
 

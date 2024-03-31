@@ -148,6 +148,10 @@ form button {
 
 .right {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
 }
 
@@ -159,3 +163,12 @@ form button {
 
 
 
+.message-container {
+    background-color: rgb(159, 3, 3);
+    opacity: 0.5;
+    width: 60%;
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+    border-radius: 30ox;
+}
