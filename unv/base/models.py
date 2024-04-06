@@ -10,6 +10,7 @@ class UserAccountManager(BaseUserManager):
             civilID=civilID
         )
 
+
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -21,8 +22,14 @@ class UserAccountManager(BaseUserManager):
             password=password,
             civilID=civilID
         )
-        user.is_superuser = True
+
+        user.is_active = True
         user.is_staff = True
+        user.is_superuser = True
+
+        user.is_student = True
+        user.is_university = True
+
         user.save(using=self._db)
         return user
 
@@ -30,9 +37,11 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, unique=True)
     civilID = models.CharField(max_length=255, blank=True, null=True)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
-
+    is_student = models.BooleanField(default=False)
+    is_university = models.BooleanField(default=False)
+    
     objects = UserAccountManager()
 
     USERNAME_FIELD = 'username'
@@ -50,4 +59,5 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
         return self.email
     
 
-
+class UniversityUser(UserAccount):
+    universityname = models.CharField(max_length=255, blank=True, null=True)

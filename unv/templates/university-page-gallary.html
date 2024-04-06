@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/university-page.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>بيانات الجامعه</title>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
+        </div>
+        <ul>
+            <li><a href="{% url 'log-out' %}">تسجيل الخروج</a></li>
+            <li><a href="{% url 'university-page-gallery' %}">الجامعات المتاحه</a></li>
+            <li><a href="#">الجدول الزمني</a></li>
+            <li><a href="#">احصائيات</a></li>
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
+        </ul>        
+    </header>
+    <section class="main-section">
+        <div class="container">
+            <div class="home-section">
+                <div class="inside-container-gallery">
+                    <form action="." method="POST" class="search">
+                        <div class="search-container">
+                            <input type="text" name="search" />
+                            <button type="submit" class="search-button"><i class="fa-solid fa-search"></i> بحث</button>
+                        </div>
+                    </form>
+                    <div class="grid-container">
+                        <div class="grid-item"><img src="{% static 'images/uni/um.jpg' %}" alt="Image4"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/Islam.jpg' %}" alt="Image3"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/saud.jpg'%}" alt="Image2"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/uf.jpg' %}" alt="Image1"></div>
+
+                        <div class="grid-item"><img src="{% static 'images/uni/ssa.jpg' %}" alt="Image4"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/uka.jpg'%}" alt="Image3"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/tub.jpg' %}" alt="Image2"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/uc.jpg' %}" alt="Image1"></div>
+
+                        <div class="grid-item"><img src="{% static 'images/uni/uj.jpg' %}" alt="Image4"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/tu.jpg' %}" alt="Image3"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/ua.jpg' %}" alt="Image2"></div>
+                        <div class="grid-item"><img src="{% static 'images/uni/ub.jpg' %}" alt="Image1"></div>
+                        
+                    </div>                    
+                </div>                      
+            </div>
+            <div class="side-section">
+                <i class="fa-solid fa-user"></i>
+                <h2>جامعه طيبه</h2>
+                <ul>
+                    <li><a href="{% url 'university-page' %}">اضافه نبذه عن الجامعه</a></li>
+                    <hr/>
+                    <li><a href="{% url 'university-page-tap2' %}">اضافه بيانات التخصصات</a></li>
+                    <hr/>
+                    <li><a href="#section3">اضافه دورات وورش العمل</a></li>
+                    <hr/>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+

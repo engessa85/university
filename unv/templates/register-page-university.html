@@ -14,23 +14,34 @@
             <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
         </div>
         <ul>
-            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
             <li><a href="#">الجامعات المتاحه</a></li>
             <li><a href="#">الجدول الزمني</a></li>
             <li><a href="#">احصائيات</a></li>
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
         </ul>        
     </header>
     <section class="main-section">
         <div class="right">
             <img class="right-image" src="{% static 'images/logo.png' %}" alt="" >
+            <div class="message-container">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
         </div>
         <div class="left">
             <div class="left-form">
                 <h1>تسجيل الجامعه</h1>
                 <form method="post" action=".">
+                    {% csrf_token %}
+                    <input type="text" id="username" name="username" placeholder="اسم المستخدم" required>
                     <select name="uni-name" required>
                         <option value="" disabled selected> الجامعة</option>
-                        <option value="uni1">جامعة أم القرى</option>
+                        <option value="جامعة أم القرى">جامعة أم القرى</option>
                         <option value="uni2">الجامعة الإسلامية</option>
                         <option value="uni3">جامعة الإمام محمد بن سعود الإسلامية</option>
                         <option value="uni4">جامعة الملك سعود</option>

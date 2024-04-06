@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/university-page.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>بيانات الجامعه</title>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
+        </div>
+        <ul>
+            <li><a href="{% url 'log-out' %}">تسجيل الخروج</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="#">({{user.username}})اهلا</a></li>
+            {% endif %}
+            <li><a href="{% url 'university-page-gallery' %}">الجامعات المتاحه</a></li>
+            <li><a href="#">الجدول الزمني</a></li>
+            <li><a href="#">احصائيات</a></li>
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
+        </ul>        
+    </header>
+    <section class="main-section">
+        <div class="container">
+            <div class="home-section">
+                <div class="inside-container">
+                    <div class="title"><h1>رؤيه ورساله الجامعه</h1></div>
+                    <div class="content">
+                        <p>تعتبر جامعة طيبه في المملكة العربية السعودية واحدة من أبرز المؤسسات التعليمية في المملكة، حيث تتميز بتقديم تعليم عالي الجودة وبرامج أكاديمية متنوعة تغطي مختلف المجالات. تأسست جامعة تيبا بهدف تطوير الموارد البشرية ودعم التنمية الاقتصادية والاجتماعية في المملكة، وهي تسعى جاهدة لتحقيق هذا الهدف من خلال تقديم برامج تعليمية شاملة ومتطورة. تتميز الجامعة ببيئة تعليمية حديثة ومرافق تعليمية متطورة، بالإضافة إلى هيكل أكاديمي متميز يضم أساتذة وباحثين متميزين. تتيح جامعة تيبا للطلاب الفرصة لاكتساب المعرفة وتطوير المهارات اللازمة لتحقيق النجاح في مختلف مجالات الحياة والعمل، وتعتبر محوراً مهماً في تعزيز مسيرة التعليم والبحث العلمي في المملكة العربية السعودية.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="side-section">
+                <i class="fa-solid fa-user"></i>
+                <h2>جامعه طيبه</h2>
+                <ul>
+                    <li><a href="{% url 'university-page' %}">اضافه نبذه عن الجامعه</a></li>
+                    <hr/>
+                    <li><a href="{% url 'university-page-tap2' %}">اضافه بيانات التخصصات</a></li>
+                    <hr/>
+                    <li><a href="#section3">اضافه دورات وورش العمل</a></li>
+                    <hr/>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+

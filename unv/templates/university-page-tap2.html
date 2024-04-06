@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/university-page.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>بيانات الجامعه</title>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
+        </div>
+        <ul>
+            <li><a href="{% url 'log-out' %}">تسجيل الخروج</a></li>
+            <li><a href="{% url 'university-page-gallery' %}">الجامعات المتاحه</a></li>
+            <li><a href="#">الجدول الزمني</a></li>
+            <li><a href="#">احصائيات</a></li>
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
+        </ul>        
+    </header>
+    <section class="main-section">
+        <div class="container">
+            <div class="home-section">
+                <div class="inside-container">
+                    <div class="title"><h1>يتم احتساب النسبه الموزونه وفق المعادله التاليه</h1></div>
+                    <div class="content" style="height: 100px;">
+                        <p>٣٠٪ من معدل الثانويه + ٣٠٪ من درجه اختبار القدرات + ٤٠٪ من درجه اختبار التحصيلي</p>
+                    </div>
+                </div>
+
+                <div class="inside-container">
+                    <div class="title"><h1>يتم احتساب النسبه الموزونه وفق المعادله التاليه</h1></div>
+                    <div class="content" style="height: 300px;">
+                        <form action="." method="POST">
+                            <div class="item-container">
+                                <div class="right">
+                                    <div class="item">
+                                        <label for="username">نسبه القبول للتخصص</label>
+                                        <input type="text" id="username" name="studentemail" required>
+                                    </div>
+                                </div>
+                                <div class="left">
+                                    <div class="item">
+                                        <label for="username">التخصص</label>
+                                        <input type="text" id="username" name="studentemail" required>
+                                        
+                                    </div>
+                                    <div class="item">
+                                        <label for="username">عدد المقاعد</label>
+                                        <input type="text" id="username" name="studentemail" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-section">
+                                <button>حفظ</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="side-section">
+                <i class="fa-solid fa-user"></i>
+                <h2>جامعه طيبه</h2>
+                <ul>
+                    <li><a href="{% url 'university-page' %}">اضافه نبذه عن الجامعه</a></li>
+                    <hr/>
+                    <li><a href="{% url 'university-page-tap2' %}">اضافه بيانات التخصصات</a></li>
+                    <hr/>
+                    <li><a href="#section3">اضافه دورات وورش العمل</a></li>
+                    <hr/>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+

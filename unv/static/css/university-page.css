@@ -1,0 +1,380 @@
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    text-align: right; 
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.0);
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 60px;
+}
+
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 80px;
+}
+
+header li {
+    display: inline;
+    margin-left: 50px;
+    margin-right: 30px;
+    
+    
+}
+
+li a {
+    text-decoration: none;
+    color: gray; 
+}
+
+a:hover {
+    color: black;
+}
+
+
+header .search {
+    border-radius: 50px;
+    height: 30px;
+}
+
+header .button {
+    margin-right: 150px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.button button {
+    width: 100px;
+    border-radius: 30px;
+    border: none;
+    height: 30px;
+    background-color: gray;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 60px;
+    text-align: right;
+    color: black;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    
+}
+
+
+.side-section {
+    flex:1;
+    background-color: #95bbb1;
+    height: 800px;
+    padding-top: 20px;
+}
+
+
+.side-section h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.side-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-section ul li {
+    padding: 8px;
+}
+
+.side-section ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.side-section ul li :hover {
+    background-color: #555;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 1px 0;
+}
+
+.fa-user {
+    font-size: 80px;
+    padding-bottom: 30px;
+    color: white;
+}
+
+
+
+.home-section {
+    flex: 4;
+    background-color: rgb(225, 221, 221, 0.3);
+    height: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.inside-container {
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border-radius: 5px;
+    padding: 30px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inside-container .title {
+    background-color: #95bbb1;
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.inside-container .title h1 {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.inside-container .content {
+    background-color: white;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.inside-container .content p {
+    font-size: 15px;
+    line-height: 2;
+
+}
+
+.inside-container .content form {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.item-container {
+    display: flex;
+}
+
+form .right {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+form .left {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+}
+
+.item label {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.item input {
+
+    margin-bottom: 10px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    font-size: 15px;
+    
+
+}
+
+
+.button-section {
+    margin-top: 20px;
+}
+
+.button-section button {
+
+    background-color: #95bbb1;
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: lighter;
+    border: none;
+
+
+}
+
+
+
+
+.inside-container-gallery {
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    width: 90%;
+    border-radius: 5px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.inside-container-gallery form {
+    display: flex;
+}
+
+.inside-container-gallery input {
+    text-align: right;
+    padding: 5px;
+    width: 250px;
+    
+}
+
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+input[type="text"] {
+    padding-right: 60px; /* Adjust the value as needed to leave space for the icon */
+    border-radius: 5px; /* Add rounded corners to the input field */
+    border: 1px solid #ccc; /* Add a border to the input field */
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 5px 10px;
+    background-color: #95bbb1; /* Change the background color of the button */
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0; /* Add rounded corners to the right side of the button */
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    top: 50%;
+    right: 45px; /* Adjust the value as needed to position the icon */
+    transform: translateY(-50%);
+    color: #999; /* Adjust the color of the icon */
+}
+
+.univ-gallery {
+    margin-top: 15px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto auto; /* Define 3 rows */
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 10px; /* Adjust the gap between grid items */
+    margin-top: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-item {
+    padding: 5px; /* Add padding for each grid item */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.grid-item img {
+    width: 100%; /* Set the width of the image to 100% of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+}
