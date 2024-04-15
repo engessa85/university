@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views import View
-from .models import UniversityUser
+from .models import UniversityUser, UniversityData
 
 User = get_user_model()
 
@@ -11,7 +11,6 @@ User = get_user_model()
 def homePage(request):
 
     if request.method == "POST":
-        print("posting ....")
         username = request.POST.get("username")
         password = request.POST.get("password")
         User = authenticate(request, username = username, password = password)
@@ -20,7 +19,7 @@ def homePage(request):
             if User.is_student:
                 return redirect("student-page")
             if User.is_university:
-                return redirect("university-page")
+                return redirect("university-main-page")
         else:
             messages.error(request, "خطأ في اسم المستخدم او كلمه السر")
     return render(request, 'home.html', context= {})
@@ -91,6 +90,62 @@ def registerPageUniversity(request):
 def studentPage(request):
     
     return render(request, "student-page.html", context={})
+
+
+
+
+
+
+
+def universityMainPage(request):
+    print("unv main page")
+    if request.method == 'POST':
+
+        unvUser = request.user
+        
+        student_email = request.POST.get('studentemail')
+        aboutunv = request.POST.get('aboutunv')
+        score1 = request.POST.get('score1')
+        score2 = request.POST.get('score2')
+        score3 = request.POST.get('score3')
+        score4 = request.POST.get('score4')
+        score5 = request.POST.get('score5')
+        score6 = request.POST.get('score6')
+        specialization1 = request.POST.get('specialization1')
+        seats1 = request.POST.get('seats1')
+        college1 = request.POST.get('college1')
+        acceptance_rate1 = request.POST.get('acceptance_rate1')
+
+        UniversityData.objects.create(
+            user=unvUser,
+            student_email=student_email,
+            about_university=aboutunv,
+            score1=score1,
+            score2=score2,
+            score3=score3,
+            score4=score4,
+            score5=score5,
+            score6=score6,
+            specialization1=specialization1,
+            seats1=seats1,
+            college1=college1,
+            acceptance_rate1=acceptance_rate1
+        )
+
+        
+        
+        
+    else:
+        print("here")
+
+    return render(request, "university-main-page.html", context={})
+
+
+
+
+
+
+
 
 
 def universityPage(request):

@@ -14,14 +14,10 @@
             <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
         </div>
         <ul>
-            <li><a href="{% url 'log-out' %}">تسجيل الخروج</a></li>
-            {% if user.is_authenticated %}
-            <li><a href="#">({{user.username}})اهلا</a></li>
-            {% endif %}
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
             <li><a href="#">الجامعات المتاحه</a></li>
             <li><a href="#">الجدول الزمني</a></li>
             <li><a href="#">احصائيات</a></li>
-            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
         </ul>        
     </header>
     <section class="main-section">
@@ -33,68 +29,68 @@
                 <div class="right-left">
                     <div class="form-right">
                         <div class="item">
-                            <input type="text" id="username" name="studentemail" required>
-                            <label for="username">البريد الالكتروني</label>
+                            <input type="text" id="studentemail" name="studentemail" required>
+                            <label for="studentemail">البريد الالكتروني</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="fathernamearabic" required>
-                            <label for="username">اسم الاب بالعربيه</label>
+                            <input type="text" id="fathernamearabic" name="fathernamearabic" required>
+                            <label for="fathernamearabic">اسم الاب بالعربيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اسم العائله بالعربيه</label>
+                            <input type="text" id="familynamearabic" name="familynamearabic" required>
+                            <label for="familynamearabic">اسم العائله بالعربيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اسم الاب بالانجليزيه</label>
+                            <input type="text" id="fathernameenglish" name="fathernameenglish" required>
+                            <label for="fathernameenglish">اسم الاب بالانجليزيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اسم العائله بالانجليزيه</label>
+                            <input type="text" id="familynameenglish" name="familynameenglish" required>
+                            <label for="familynameenglish">اسم العائله بالانجليزيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">دوله الجنسيه</label>
+                            <input type="text" id="nationality" name="nationality" required>
+                            <label for="nationality">دوله الجنسيه</label>
                         </div>
                     </div>
                     
                     <div class="form-left">
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">رقم الهويه الوطنيه</label>
+                            <input type="text" id="StudentID" name="StudentID"  required>
+                            <label for="StudentID">رقم الهويه الوطنيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">الاسم الاول بالعربيه</label>
+                            <input type="text" id="firstnamearabic" name="firstnamearabic"  required>
+                            <label for="firstnamearabic">الاسم الاول بالعربيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">اسم الجد بالعربيه</label>
+                            <input type="text" id="grandfathernamearabic" name="grandfathernamearabic"  required>
+                            <label for="grandfathernamearabic">اسم الجد بالعربيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">الاسم الاول بالانجليزيه</label>
+                            <input type="text" id="firstnameenglish" name="firstnameenglish"  required>
+                            <label for="firstnameenglish">الاسم الاول بالانجليزيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">اسم الجد بالانجليزيه</label>
+                            <input type="text" id="grandfathernameenglish" name="grandfathernameenglish"  required>
+                            <label for="grandfathernameenglish">اسم الجد بالانجليزيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">الجنسيه</label>
+                            <input type="text" id="nationality1" name="nationality1"  required>
+                            <label for="nationality1">الجنسيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">رقم الجوال</label>
+                            <input type="text" id="phonenumber" name="phonenumber"  required>
+                            <label for="phonenumber">رقم الجوال</label>
                         </div>
                         <div class="item">
                             <div class="radio-div">
                                 <label for="male">ذكر</label>
-                                <input type="radio" id="male" name="gender" value="male">
+                                <input type="radio" id="malegender" name="malegender" value="male">
                                 <label for="female">انثي</label>
-                                <input type="radio" id="female" name="gender" value="female">
+                                <input type="radio" id="femalegender" name="femalegender" value="female">
                             </div>
-                            <label for="username">الجنس</label>
+                            <label for="gender">الجنس</label>
                         </div>
                     </div>
                 </div>
@@ -102,24 +98,24 @@
 
                 <div class="full-part">
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">اضطرابات التوحد</label>
+                        <input type="checkbox" id="autism" name="autism" value="option1">
+                        <label for="autism">اضطرابات التوحد</label>
                     </div>
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">اعاقه بصريه</label>
+                        <input type="checkbox" id="Visualimpairment" name="Visualimpairment" value="option1">
+                        <label for="Visualimpairment">اعاقه بصريه</label>
                     </div>
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">صعوبات التعلم</label>
+                        <input type="checkbox" id="learningdifficulties" name="learningdifficulties" value="option1">
+                        <label for="learningdifficulties">صعوبات التعلم</label>
                     </div>
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">اضطربات نفسيه</label>
+                        <input type="checkbox" id="psychological" name="psychological" value="option1">
+                        <label for="psychological">اضطربات نفسيه</label>
                     </div>
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">بدون اعاقه</label>
+                        <input type="checkbox" id="Withoutdisabilit" name="Withoutdisabilit" value="option1">
+                        <label for="Withoutdisabilit">بدون اعاقه</label>
                     </div>
                     <label for="username">هل تعاني من اعاقه</label>
                 </div>
@@ -127,20 +123,20 @@
 
                 <div class="full-part down">
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">اضطربات فدط الحدكه</label>
+                        <input type="checkbox" id="Movementdisorder" name="Movementdisorder" value="option1">
+                        <label for="Movementdisorder">اضطربات فدط الحدكه</label>
                     </div>
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">اضطربات التواصل</label>
+                        <input type="checkbox" id="CommunicationDisorders" name="CommunicationDisorders" value="option1">
+                        <label for="CommunicationDisorders">اضطربات التواصل</label>
                     </div>
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">اعاقه سمعيه</label>
+                        <input type="checkbox" id="Hearingimpairment" name="Hearingimpairment" value="option1">
+                        <label for="Hearingimpairment">اعاقه سمعيه</label>
                     </div>
                     <div class="check-div">
-                        <input type="checkbox" id="option1" name="option1" value="option1">
-                        <label for="option1">اعاقه بدنيه وصحيه</label>
+                        <input type="checkbox" id="Physicalhealthdisability" name="Physicalhealthdisability" value="option1">
+                        <label for="Physicalhealthdisability">اعاقه بدنيه وصحيه</label>
                     </div>
                 </div>
                 <div class="title down"><h1>بيانات الميلاد</h1></div>
@@ -149,47 +145,44 @@
                 <div class="right-left">
                     <div class="form-right">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">منطقه الميلاد</label>
+                            <input type="text" id="Birtharea" name="Birtharea" required>
+                            <label for="Birtharea">منطقه الميلاد</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">محل الميلاد - المدينه</label>
+                            <input type="text" id="Cityofbirth" name="Cityofbirth" required>
+                            <label for="Cityofbirth">محل الميلاد - المدينه</label>
                         </div>
                     </div>
                     
                     <div class="form-left">
                         <div class="item">
-                            <input type="text" id="username" name="username"  required>
-                            <label for="username">تاريخ الميلاد</label>
+                            <input type="text" id="birthdate" name="birthdate"  required>
+                            <label for="birthdate">تاريخ الميلاد</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">محل الميلاد - الدوله</label>
-                        </div>
-                        <div class="item">
-                            <div class="radio-div down">
-                                <label for="male">لا</label>
-                                <input type="radio" id="male" name="gender" value="male">
-                                <label for="female">نعم</label>
-                                <input type="radio" id="female" name="gender" value="female">
-                            </div>
-                            <label for="username">هل انت ابن  / ابنه احد شهداء الواجب</label>
+                            <input type="text" id="countryofbirth" name="countryofbirth" required>
+                            <label for="countryofbirth">محل الميلاد - الدوله</label>
                         </div>
                         <div class="item">
                             <div class="radio-div down">
                                 <label for="male">لا</label>
-                                <input type="radio" id="male" name="gender" value="male">
+                                <input type="radio" id="no" name="no" value="male">
                                 <label for="female">نعم</label>
-                                <input type="radio" id="female" name="gender" value="female">
+                                <input type="radio" id="yes" name="yes" value="female">
                             </div>
-                            <label for="username">عمر المتقدم / المتقدمه</label>
+                            <label for="sonOfmartyrs">هل انت ابن  / ابنه احد شهداء الواجب</label>
+                        </div>
+                        <div class="item">
+                            <div class="radio-div down">
+                                <label for="male">لا</label>
+                                <input type="radio" id="no" name="no" value="male">
+                                <label for="female">نعم</label>
+                                <input type="radio" id="yes" name="yes" value="female">
+                            </div>
+                            <label for="Age">عمر المتقدم / المتقدمه</label>
                         </div>
                     </div>
                 </div>
-
-
-
 
 
                 <div class="title down"><h1>بيانات العمل للمتقدم</h1></div>
@@ -203,8 +196,8 @@
                             <label for="username"></label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">المسمي الوظيفي</label>
+                            <input type="text" id="Jobtitle" name="Jobtitle" required>
+                            <label for="Jobtitle">المسمي الوظيفي</label>
                         </div>
                         <div class="item">
                             <input type="text" id="username" name="username" required>
@@ -216,17 +209,17 @@
                         <div class="item">
                             <div class="radio-div job">
                                 <label for="male">لا اعمل</label>
-                                <input type="radio" id="male" name="gender" value="male">
+                                <input type="radio" id="privatesector" name="privatesector" value="male">
                                 <label for="male">اعمل قطاع خاص</label>
-                                <input type="radio" id="male" name="gender" value="male">
+                                <input type="radio" id="governmentsector" name="governmentsector" value="male">
                                 <label for="female">اعمل قطاع حكومي</label>
-                                <input type="radio" id="female" name="gender" value="female">
+                                <input type="radio" id="jobstate" name="jobstate" value="female">
                             </div>
-                            <label for="username">الحاله الوظيفيه</label>
+                            <label for="jobstate">الحاله الوظيفيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">جه العمل</label>
+                            <input type="text" id="jobplace" name="jobplace" required>
+                            <label for="jobplace">جه العمل</label>
                         </div>
                         <div class="item">
                             <input type="text" id="username" name="username"  required>
@@ -241,22 +234,22 @@
                 <div class="right-left">
                     <div class="form-right">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">صله القرابه</label>
+                            <input type="text" id="relativerelation" name="relativerelation" required>
+                            <label for="relativerelation">صله القرابه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">الجوال</label>
+                            <input type="text" id="phone1" name="phone1" required>
+                            <label for="phone1">الجوال</label>
                         </div>
                     </div>
                     <div class="form-left">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اسم ولي الامر ثلاثي</label>
+                            <input type="text" id="fathersnameistriple" name="fathersnameistriple" required>
+                            <label for="fathersnameistriple">اسم ولي الامر ثلاثي</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">العنوان</label>
+                            <input type="text" id="address" name="address" required>
+                            <label for="address">العنوان</label>
                         </div>
                     </div>
                 </div>
@@ -267,8 +260,8 @@
                 <div class="right-left">
                     <div class="form-right">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">العنوان</label>
+                            <input type="text" id="address1" name="address1" required>
+                            <label for="address1">العنوان</label>
                         </div>
                         <div class="item">
                             <input style="visibility:hidden" type="text" id="username" name="username" required>
@@ -277,12 +270,12 @@
                     </div>
                     <div class="form-left">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اسم شخص  للطوارئ</label>
+                            <input type="text" id="Emergincypersonname" name="Emergincypersonname" required>
+                            <label for="Emergincypersonname">اسم شخص  للطوارئ</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">رقم الجوال</label>
+                            <input type="text" id="phone2" name="phone2" required>
+                            <label for="phone2">رقم الجوال</label>
                         </div>
                     </div>
                 </div>
@@ -292,38 +285,38 @@
                 <div class="right-left">
                     <div class="form-right">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">المدينه</label>
+                            <input type="text" id="city" name="city" required>
+                            <label for="city">المدينه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">العام الدراسي</label>
+                            <input type="text" id="yearofstudy" name="yearofstudy" required>
+                            <label for="yearofstudy">العام الدراسي</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">المعدل التداكمي للعام</label>
+                            <input type="text" id="Cumulativeaverage" name="Cumulativeaverage" required>
+                            <label for="Cumulativeaverage">المعدل التداكمي للعام</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">درجه اختبار التحصيلي</label>
+                            <input type="text" id="achievetest" name="achievetest" required>
+                            <label for="achievetest">درجه اختبار التحصيلي</label>
                         </div>
                     </div>
                     <div class="form-left">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">المنطقه</label>
+                            <input type="text" id="area" name="area" required>
+                            <label for="area">المنطقه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">المدرسه</label>
+                            <input type="text" id="school" name="school" required>
+                            <label for="school">المدرسه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">نوع الثانويه العامه</label>
+                            <input type="text" id="highschooltype" name="highschooltype" required>
+                            <label for="highschooltype">نوع الثانويه العامه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">درجه اختبار القدرات</label>
+                            <input type="text" id="cognitivetest" name="cognitivetest" required>
+                            <label for="cognitivetest">درجه اختبار القدرات</label>
                         </div>
                     </div>
                 </div>
@@ -333,16 +326,16 @@
                 <div class="right-left">
                     <div class="form-right">
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اذكرها</label>
+                            <input type="text" id="mentionit" name="mentionit" required>
+                            <label for="mentionit">اذكرها</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اسم الشهاده</label>
+                            <input type="text" id="certificate" name="certificate" required>
+                            <label for="certificate">اسم الشهاده</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">الكليه</label>
+                            <input type="text" id="college" name="college" required>
+                            <label for="college">الكليه</label>
                         </div>
                     </div>
 
@@ -355,20 +348,20 @@
                                 <label for="female">لا</label>
                                 <input type="radio" id="female" name="gender" value="female">
                             </div>
-                            <label for="username">هل سبق ان التحقت بجامعه او كليه اخري</label>
+                            <label for="PreviousCollege?">هل سبق ان التحقت بجامعه او كليه اخري</label>
                         </div>
                         <div class="item">
                             <div class="radio-div other">
                                 <label for="male">نعم</label>
-                                <input type="radio" id="male" name="gender" value="male">
+                                <input type="radio" id="gender_m" name="gender_m" value="male">
                                 <label for="female">لا</label>
-                                <input type="radio" id="female" name="gender" value="female">
+                                <input type="radio" id="gender_f" name="gender_f" value="female">
                             </div>
-                            <label for="username">هل سبق ان حصلت علي شهاده جامعيه</label>
+                            <label for="PreviousCertificate?">هل سبق ان حصلت علي شهاده جامعيه</label>
                         </div>
                         <div class="item">
-                            <input type="text" id="username" name="username" required>
-                            <label for="username">اسم الجامعه</label>
+                            <input type="text" id="universityname" name="universityname" required>
+                            <label for="universityname">اسم الجامعه</label>
                         </div>
                     </div>
                 </div>

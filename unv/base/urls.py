@@ -9,5 +9,6 @@ urlpatterns = [
     path("university-page", views.universityPage, name = "university-page"),
     path("university-page-tap2", views.universityPagTap2, name = "university-page-tap2"),
     path("university-page-gallery", views.universityPageGallery, name = "university-page-gallery"),
+    path("university-main-page", views.universityMainPage, name = "university-main-page"),
     path("logout", views.logoutView.as_view(), name = "log-out")
 ]
