@@ -33,20 +33,24 @@
                         </div>
                     </form>
                     <div class="grid-container">
-                        <div class="grid-item"><img src="{% static 'images/uni/um.jpg' %}" alt="Image4"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/Islam.jpg' %}" alt="Image3"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/saud.jpg'%}" alt="Image2"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/uf.jpg' %}" alt="Image1"></div>
 
-                        <div class="grid-item"><img src="{% static 'images/uni/ssa.jpg' %}" alt="Image4"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/uka.jpg'%}" alt="Image3"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/tub.jpg' %}" alt="Image2"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/uc.jpg' %}" alt="Image1"></div>
-
-                        <div class="grid-item"><img src="{% static 'images/uni/uj.jpg' %}" alt="Image4"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/tu.jpg' %}" alt="Image3"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/ua.jpg' %}" alt="Image2"></div>
-                        <div class="grid-item"><img src="{% static 'images/uni/ub.jpg' %}" alt="Image1"></div>
+                      
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'um.jpg' %}"><img src="{% static 'images/uni/um.jpg' %}" alt="Image4"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'Islam.jpg' %}"><img src="{% static 'images/uni/Islam.jpg' %}" alt="Image3"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'saud.jpg' %}"><img src="{% static 'images/uni/saud.jpg'%}" alt="Image2"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'uf.jpg' %}"><img src="{% static 'images/uni/uf.jpg' %}" alt="Image1"></a></div>
+                    
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'ssa.jpg' %}"><img src="{% static 'images/uni/ssa.jpg' %}" alt="Image4"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'uka.jpg' %}"><img src="{% static 'images/uni/uka.jpg'%}" alt="Image3"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'tub.jpg' %}"><img src="{% static 'images/uni/tub.jpg' %}" alt="Image2"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'uc.jpg' %}"><img src="{% static 'images/uni/uc.jpg' %}" alt="Image1"></a></div>
+                    
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'uj.jpg' %}"><img src="{% static 'images/uni/uj.jpg' %}" alt="Image4"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'tu.jpg' %}"><img src="{% static 'images/uni/tu.jpg' %}" alt="Image3"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'ua.jpg' %}"><img src="{% static 'images/uni/ua.jpg' %}" alt="Image2"></a></div>
+                        <div class="grid-item"><a href="{% url 'university-get-info' 'ub.jpg' %}"><img src="{% static 'images/uni/ub.jpg' %}" alt="Image1"></a></div>
+                    
+                    
                         
                     </div>                    
                 </div>                      
