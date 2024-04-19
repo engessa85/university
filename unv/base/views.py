@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views import View
-from .models import UniversityUser, UniversityData
+from .models import UniversityUser, UniversityData, Student
 from .alluniv import UNIVERSITIES
 
 User = get_user_model()
@@ -92,14 +92,81 @@ def registerPageUniversity(request):
     return render(request, 'register-page-university.html', context= {})
 
 
+
+
 def studentPage(request):
 
+    if request.method == 'POST':
+        student = Student(
+            userstudent = request.user,
+            studentemail=request.POST.get('studentemail'),
+            fathernamearabic=request.POST.get('fathernamearabic'),
+            familynamearabic=request.POST.get('familynamearabic'),
+            fathernameenglish=request.POST.get('fathernameenglish'),
+            familynameenglish=request.POST.get('familynameenglish'),
+            nationality=request.POST.get('nationality'),
+            StudentID=request.POST.get('StudentID'),
+            firstnamearabic=request.POST.get('firstnamearabic'),
+            grandfathernamearabic=request.POST.get('grandfathernamearabic'),
+            firstnameenglish=request.POST.get('firstnameenglish'),
+            grandfathernameenglish=request.POST.get('grandfathernameenglish'),
+            nationality1=request.POST.get('nationality1'),
+            phonenumber=request.POST.get('phonenumber'),
+            malegender=request.POST.get('malegender') == 'male',
+            femalegender=request.POST.get('femalegender') == 'female',
+            autism=request.POST.get('autism') == 'option1',
+            Visualimpairment=request.POST.get('Visualimpairment') == 'option1',
+            learningdifficulties=request.POST.get('learningdifficulties') == 'option1',
+            psychological=request.POST.get('psychological') == 'option1',
+            Withoutdisabilit=request.POST.get('Withoutdisabilit') == 'option1',
+            Movementdisorder=request.POST.get('Movementdisorder') == 'option1',
+            CommunicationDisorders=request.POST.get('CommunicationDisorders') == 'option1',
+            Hearingimpairment=request.POST.get('Hearingimpairment') == 'option1',
+            Physicalhealthdisability=request.POST.get('Physicalhealthdisability') == 'option1',
+            Birtharea=request.POST.get('Birtharea'),
+            Cityofbirth=request.POST.get('Cityofbirth'),
+            birthdate=request.POST.get('birthdate'),
+            countryofbirth=request.POST.get('countryofbirth'),
+            no=request.POST.get('no') == 'male',
+            yes=request.POST.get('yes') == 'female',
+            Jobtitle=request.POST.get('Jobtitle'),
+            privatesector=request.POST.get('privatesector') == 'male',
+            governmentsector=request.POST.get('governmentsector') == 'male',
+            jobstate=request.POST.get('jobstate') == 'female',
+            jobplace=request.POST.get('jobplace'),
+            relativerelation=request.POST.get('relativerelation'),
+            phone1=request.POST.get('phone1'),
+            fathersnameistriple=request.POST.get('fathersnameistriple'),
+            address=request.POST.get('address'),
+            address1=request.POST.get('address1'),
+            Emergincypersonname=request.POST.get('Emergincypersonname'),
+            phone2=request.POST.get('phone2'),
+            city=request.POST.get('city'),
+            yearofstudy=request.POST.get('yearofstudy'),
+            Cumulativeaverage=request.POST.get('Cumulativeaverage'),
+            achievetest=request.POST.get('achievetest'),
+            area=request.POST.get('area'),
+            school=request.POST.get('school'),
+            highschooltype=request.POST.get('highschooltype'),
+            cognitivetest=request.POST.get('cognitivetest'),
+            mentionit=request.POST.get('mentionit'),
+            certificate=request.POST.get('certificate'),
+            college=request.POST.get('college'),
+            gender=request.POST.get('gender') == 'male',
+            gender_m=request.POST.get('gender_m') == 'male',
+            gender_f=request.POST.get('gender_f') == 'female',
+            universityname=request.POST.get('universityname')
+        )
+        student.save()
+        return redirect("student-info-page")
     
+
     return render(request, "student-page.html", context={})
 
 
 
-
+def studentPageGetInfo(request):
+    return render(request, "student-getinfo-page.html", context={})
 
 
 

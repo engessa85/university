@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/student-info-page.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>بيانات الطالب</title>
+</head>
+<body>
+    <header>
+        <div class="button">
+            <img  src="{% static 'images/logo.png' %}" alt="" width="100px" >
+        </div>
+        <ul>
+            <li><a href="{% url 'home-page' %}">الصفحه الرئيسيه</a></li>
+            <li><a href="#">الجامعات المتاحه</a></li>
+            <li><a href="#">الجدول الزمني</a></li>
+            <li><a href="#">احصائيات</a></li>
+        </ul>        
+    </header>
+    <section class="main-section">
+        <div class="container">
+            <div class="main-part">
+                <form method="post" action="{% url 'student-page' %}">
+                    {% csrf_token %}
+                
+                    <div class="title down"><h1>بيانات شخصيه</h1></div>
+                
+                    <div class="right-left">
+                        <div class="form-right">
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">115877712345</label>
+                                <label for="birthdate">رقم الهويه الوطنيه</label>
+                            </div>
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">سعوديه</label>
+                                <label for="birthdate">الجنسيه</label>
+                            </div>
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">jomanaali@gmail.com</label>
+                                <label for="birthdate">البريد الالكتروني</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-left">
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">جمانه علي</label>
+                                <label for="birthdate">اسم الطالب</label>
+                            </div>
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">20-11-2023</label>
+                                <label for="birthdate">تاريخ انتهاء الهويه</label>
+                            </div>
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">98.82</label>
+                                <label for="birthdate">النسبه الموزونه</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="title down"><h1>التخصصات المقترحه</h1></div>
+    
+                    <div class="new-right-left">
+                        <div class="form-right">
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">98.8</label>
+                                <label for="birthdate">جامعه الملك عبد العزيز - الكليه الصحه - الفرع الرئيسي</label>
+                            </div>
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">98.8</label>
+                                <label for="birthdate">جامعه طيبه - الكليه التمريض - الفرع الرئيسي</label>
+                            </div>
+                            <div class="item">
+                                <label for="birthdate" class="labelframe">98.8</label>
+                                <label for="birthdate">كليه الامير العسكريه للعلوم الصحيه - تقنيه التخدير</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>            
+            </div>
+            <div class="side-section">
+                <i class="fa-solid fa-user"></i>
+                <h2>جمانه علي</h2>
+                <ul>
+                    <li><a href="#">بيانات الطالب</a></li>
+                    <hr/>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+

@@ -6,6 +6,10 @@ urlpatterns = [
     path("register-student/", views.registerPageStudent, name="register-page-student"),
     path("register-university/", views.registerPageUniversity, name="register-page-university"),
     path("student-page", views.studentPage, name = "student-page"),
+    path("student-info-page", views.studentPageGetInfo, name = "student-info-page"),
+
+
+
     path("university-page", views.universityPage, name = "university-page"),
     path("university-page-tap2", views.universityPagTap2, name = "university-page-tap2"),
     path("university-page-gallery", views.universityPageGallery, name = "university-page-gallery"),

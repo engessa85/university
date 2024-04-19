@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.db import models
 from django.conf import settings
+from datetime import date
 
 class UserAccountManager(BaseUserManager):
     def create_user(self, username, email, password=None, civilID=None):
@@ -66,87 +67,6 @@ class UniversityUser(UserAccount):
 
 
 
-class StudentMoreInfo(models.Model):
-    studentUser = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
-    # Basic student information
-    studentemail = models.EmailField(verbose_name="البريد الالكتروني", null=False, blank=False)
-    fathernamearabic = models.CharField(max_length=255, verbose_name="اسم الاب بالعربيه", null=False, blank=False)
-    familynamearabic = models.CharField(max_length=255, verbose_name="اسم العائله بالعربيه", null=False, blank=False)
-    fathernameenglish = models.CharField(max_length=255, verbose_name="اسم الاب بالانجليزيه", null=False, blank=False)
-    familynameenglish = models.CharField(max_length=255, verbose_name="اسم العائله بالانجليزيه", null=False, blank=False)
-    nationality = models.CharField(max_length=255, verbose_name="دوله الجنسيه", null=False, blank=False)
-    StudentID = models.CharField(max_length=255, verbose_name="رقم الهويه الوطنيه", null=False, blank=False)
-    firstnamearabic = models.CharField(max_length=255, verbose_name="الاسم الاول بالعربيه", null=False, blank=False)
-    grandfathernamearabic = models.CharField(max_length=255, verbose_name="اسم الجد بالعربيه", null=False, blank=False)
-    firstnameenglish = models.CharField(max_length=255, verbose_name="الاسم الاول بالانجليزيه", null=False, blank=False)
-    grandfathernameenglish = models.CharField(max_length=255, verbose_name="اسم الجد بالانجليزيه", null=False, blank=False)
-    nationality1 = models.CharField(max_length=255, verbose_name="الجنسيه", null=False, blank=False)
-    phonenumber = models.CharField(max_length=255, verbose_name="رقم الجوال", null=False, blank=False)
-    malegender = models.BooleanField(verbose_name="ذكر", default=True)
-    femalegender = models.BooleanField(verbose_name="انثى", default=False)
-
-    # Disability information
-    autism = models.BooleanField(verbose_name="اضطرابات التوحد", default=False, null=False)
-    Visualimpairment = models.BooleanField(verbose_name="اعاقه بصريه", default=False, null=False)
-    learningdifficulties = models.BooleanField(verbose_name="صعوبات التعلم", default=False, null=False)
-    psychological = models.BooleanField(verbose_name="اضطربات نفسيه", default=False, null=False)
-    Withoutdisabilit = models.BooleanField(verbose_name="بدون اعاقه", default=False, null=False)
-
-    Movementdisorder = models.BooleanField(verbose_name="اضطربات فدط الحدكه", default=False, null=False)
-    CommunicationDisorders = models.BooleanField(verbose_name="اضطربات التواصل", default=False, null=False)
-    Hearingimpairment = models.BooleanField(verbose_name="اعاقه سمعيه", default=False, null=False)
-    Physicalhealthdisability = models.BooleanField(verbose_name="اعاقه بدنيه وصحيه", default=False, null=False)
-
-    # Birth information
-    Birtharea = models.CharField(max_length=255, verbose_name="منطقه الميلاد", null=False, blank=False)
-    Cityofbirth = models.CharField(max_length=255, verbose_name="محل الميلاد - المدينه", null=False, blank=False)
-    birthdate = models.DateField(verbose_name="تاريخ الميلاد", null=False, blank=False)
-    countryofbirth = models.CharField(max_length=255, verbose_name="محل الميلاد - الدوله", null=False, blank=False)
-    sonOfmartyrs = models.BooleanField(verbose_name="هل انت ابن/ابنه احد شهداء الواجب", default=False, null=False)
-    Age = models.IntegerField(verbose_name="عمر المتقدم / المتقدمه", null=False, blank=False)
-
-    # Work information
-    Jobtitle = models.CharField(max_length=255, verbose_name="المسمي الوظيفي", null=True)
-    jobstate = models.CharField(max_length=255, verbose_name="الحاله الوظيفيه", null=True)
-    jobplace = models.CharField(max_length=255, verbose_name="جه العمل", null=True)
-
-    # Guardian information
-    relativerelation = models.CharField(max_length=255, verbose_name="صله القرابه", null=False, blank=False)
-    phone1 = models.CharField(max_length=255, verbose_name="الجوال", null=False, blank=False)
-    fathersnameistriple = models.CharField(max_length=255, verbose_name="اسم ولي الامر ثلاثي", null=False, blank=False)
-    address = models.CharField(max_length=255, verbose_name="العنوان", null=False, blank=False)
-
-    # Emergency contact information
-    address1 = models.CharField(max_length=255, verbose_name="العنوان", null=False, blank=False)
-    Emergincypersonname = models.CharField(max_length=255, verbose_name="اسم شخص للطوارئ", null=False, blank=False)
-    phone2 = models.CharField(max_length=255, verbose_name="رقم الجوال", null=False, blank=False)
-
-    # Secondary certificate information
-    city = models.CharField(max_length=255, verbose_name="المدينه", null=False, blank=False)
-    yearofstudy = models.IntegerField(verbose_name="العام الدراسي", null=False, blank=False)
-    Cumulativeaverage = models.FloatField(verbose_name="المعدل التداكمي للعام", null=False, blank=False)
-    achievetest = models.FloatField(verbose_name="درجه اختبار التحصيلي", null=False, blank=False)
-    area = models.CharField(max_length=255, verbose_name="المنطقه", null=False, blank=False)
-    school = models.CharField(max_length=255, verbose_name="المدرسه", null=False, blank=False)
-    highschooltype = models.CharField(max_length=255, verbose_name="نوع الثانويه العامه", null=False, blank=False)
-    cognitivetest = models.FloatField(verbose_name="درجه اختبار القدرات", null=False, blank=False)
-
-    # Other information
-    mentionit = models.CharField(max_length=255, verbose_name="اذكرها", null=False, blank=False)
-    certificate = models.CharField(max_length=255, verbose_name="اسم الشهاده", null=False, blank=False)
-    college = models.CharField(max_length=255, verbose_name="الكليه", null=False, blank=False)
-    gender = models.BooleanField(verbose_name="سبق ان التحقت بجامعه او كليه اخري", default=False, null=False, blank=False)
-    gender_m = models.BooleanField(verbose_name="سبق ان حصلت علي شهاده جامعيه", default=False, null=False, blank=False)
-    universityname = models.CharField(max_length=255, verbose_name="اسم الجامعه", null=False, blank=False)
-
-    def __str__(self):
-        return str(self.studentUser.username)
-    
-
-
-
-
-
 class UniversityData(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     student_email = models.EmailField()
@@ -164,3 +84,83 @@ class UniversityData(models.Model):
 
     def __str__(self):
         return self.student_email
+
+
+
+
+
+
+
+
+
+class Student(models.Model):
+    userstudent = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    studentemail = models.EmailField(null=True, blank=True)
+    fathernamearabic = models.CharField(max_length=255, null=True, blank=True)
+    familynamearabic = models.CharField(max_length=255, null=True, blank=True)
+    fathernameenglish = models.CharField(max_length=255, null=True, blank=True)
+    familynameenglish = models.CharField(max_length=255, null=True, blank=True)
+    nationality = models.CharField(max_length=255, null=True, blank=True)
+    StudentID = models.CharField(max_length=255, null=True, blank=True)
+    firstnamearabic = models.CharField(max_length=255, null=True, blank=True)
+    grandfathernamearabic = models.CharField(max_length=255, null=True, blank=True)
+    firstnameenglish = models.CharField(max_length=255, null=True, blank=True)
+    grandfathernameenglish = models.CharField(max_length=255, null=True, blank=True)
+    nationality1 = models.CharField(max_length=255, null=True, blank=True)
+    phonenumber = models.CharField(max_length=255, null=True, blank=True)
+    malegender = models.BooleanField(null=True, blank=True)
+    femalegender = models.BooleanField(null=True, blank=True)
+    autism = models.BooleanField(null=True, blank=True)
+    Visualimpairment = models.BooleanField(null=True, blank=True)
+    learningdifficulties = models.BooleanField(null=True, blank=True)
+    psychological = models.BooleanField(null=True, blank=True)
+    Withoutdisabilit = models.BooleanField(null=True, blank=True)
+    Movementdisorder = models.BooleanField(null=True, blank=True)
+    CommunicationDisorders = models.BooleanField(null=True, blank=True)
+    Hearingimpairment = models.BooleanField(null=True, blank=True)
+    Physicalhealthdisability = models.BooleanField(null=True, blank=True)
+    Birtharea = models.CharField(max_length=255, null=True, blank=True)
+    Cityofbirth = models.CharField(max_length=255, null=True, blank=True)
+    birthdate = models.DateField(null=True, blank=True)
+
+    countryofbirth = models.CharField(max_length=255, null=True, blank=True)
+    no = models.BooleanField(null=True, blank=True)
+    yes = models.BooleanField(null=True, blank=True)
+    Jobtitle = models.CharField(max_length=255, null=True, blank=True)
+    privatesector = models.BooleanField(null=True, blank=True)
+    governmentsector = models.BooleanField(null=True, blank=True)
+    jobstate = models.BooleanField(null=True, blank=True)
+    jobplace = models.CharField(max_length=255, null=True, blank=True)
+    relativerelation = models.CharField(max_length=255, null=True, blank=True)
+    phone1 = models.CharField(max_length=255, null=True, blank=True)
+    fathersnameistriple = models.CharField(max_length=255, null=True, blank=True)
+    address = models.CharField(max_length=255, null=True, blank=True)
+    address1 = models.CharField(max_length=255, null=True, blank=True)
+    Emergincypersonname = models.CharField(max_length=255, null=True, blank=True)
+    phone2 = models.CharField(max_length=255, null=True, blank=True)
+    city = models.CharField(max_length=255, null=True, blank=True)
+    yearofstudy = models.CharField(max_length=255, null=True, blank=True)
+    Cumulativeaverage = models.CharField(max_length=255, null=True, blank=True)
+    achievetest = models.CharField(max_length=255, null=True, blank=True)
+    area = models.CharField(max_length=255, null=True, blank=True)
+    school = models.CharField(max_length=255, null=True, blank=True)
+    highschooltype = models.CharField(max_length=255, null=True, blank=True)
+    cognitivetest = models.CharField(max_length=255, null=True, blank=True)
+    mentionit = models.CharField(max_length=255, null=True, blank=True)
+    certificate = models.CharField(max_length=255, null=True, blank=True)
+    college = models.CharField(max_length=255, null=True, blank=True)
+    gender = models.BooleanField(null=True, blank=True)
+    gender_m = models.BooleanField(null=True, blank=True)
+    gender_f = models.BooleanField(null=True, blank=True)
+    universityname = models.CharField(max_length=255, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        # Set default value for birthdate if it's None
+        if self.birthdate is None:
+            self.birthdate = date.today()
+        
+        super(Student, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.studentemail  # or any other field you want to be displayed
+
