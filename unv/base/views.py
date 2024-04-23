@@ -173,9 +173,7 @@ def studentPageGetInfo(request):
 def universityMainPage(request):
     
     if request.method == 'POST':
-
-        
-        student_email = request.POST.get('studentemail')
+        speciamain = request.POST.get('speciamain')
         aboutunv = request.POST.get('aboutunv')
         score1 = request.POST.get('score1')
         score2 = request.POST.get('score2')
@@ -185,7 +183,7 @@ def universityMainPage(request):
         score6 = request.POST.get('score6')
 
         
-        request.session['student_email'] = student_email
+        request.session['speciamain'] = speciamain
         request.session['about_unv'] = aboutunv
         request.session['score1'] = score1
         request.session['score2'] = score2
@@ -211,7 +209,7 @@ def universityMoreInfo(request):
 
         unvUser = request.user
 
-        student_email = request.session.get('student_email')
+        speciamain = request.session.get('speciamain')
         about_unv = request.session.get('about_unv')
         score1 = request.session.get('score1')
         score2 = request.session.get('score2')
@@ -244,7 +242,7 @@ def universityMoreInfo(request):
         try:
             UniversityData.objects.create(
             user=unvUser,
-            student_email=student_email,
+            speciamain=speciamain,
             about_university=about_unv,
             score1=score1,
             score2=score2,
@@ -257,11 +255,14 @@ def universityMoreInfo(request):
             college1=college1,
             acceptance_rate1=acceptance_rate1
         )
+            print("university data is created")
+            
+            return redirect("university-page-gallery")
         except Exception as e:
           
             print(e)
 
-        return redirect("university-page-gallery")
+       
     
     return render(request, "university-more-info.html", context={})
     

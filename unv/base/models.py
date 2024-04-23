@@ -69,21 +69,20 @@ class UniversityUser(UserAccount):
 
 class UniversityData(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    student_email = models.EmailField()
-    about_university = models.TextField()
-    score1 = models.FloatField()
-    score2 = models.FloatField()
-    score3 = models.FloatField()
-    score4 = models.FloatField()
-    score5 = models.FloatField()
-    score6 = models.FloatField()
-    specialization1 = models.CharField(max_length=255)
-    seats1 = models.IntegerField()
-    college1 = models.CharField(max_length=255)
-    acceptance_rate1 = models.FloatField()
+    speciamain = models.CharField(max_length=255, null = True, blank= True)
+    about_university = models.TextField(null = True, blank= True)
+    score1 = models.FloatField(null = True, blank= True)
+    score2 = models.FloatField(null = True, blank= True)
+    score3 = models.FloatField(null = True, blank= True)
+    score4 = models.FloatField(null = True, blank= True)
+    score5 = models.FloatField(null = True, blank= True)
+    score6 = models.FloatField(null = True, blank= True)
+    specialization1 = models.CharField(max_length=255, null = True, blank= True)
+    seats1 = models.IntegerField(null = True, blank= True)
+    college1 = models.CharField(max_length=255, null = True, blank= True)
+    acceptance_rate1 = models.FloatField(null = True, blank= True)
 
-    def __str__(self):
-        return self.student_email
+   
 
 
 
